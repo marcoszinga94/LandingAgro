@@ -8,10 +8,11 @@
     necesitas.
   </p>
 
-  <div class="contacto flex flex-row justify-center w-full h-auto m-10 border">
-    <!-- info-empresa -->
+  <div
+    class="flex flex-col justify-center w-full h-auto m-10 border lg:flex-row"
+  >
     <aside
-      class="info-empresa flex items-center justify-center text-white font-bold bg-green-900 flex-1"
+      class="flex items-center justify-center text-white font-bold bg-green-900 flex-1"
     >
       <div class="text-sm flex">
         <ul class="flex flex-col text-base list-none p-0">
@@ -55,7 +56,6 @@
       </div>
     </aside>
 
-    <!-- formulario -->
     <aside class="formulario bg-white flex-1">
       <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
         <div class="flex flex-row p-2">
