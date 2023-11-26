@@ -1,6 +1,6 @@
 <section id="servicios" class="p-8 m-auto max-w-5xl">
   <h2 class="text-3xl font-bold mb-6 text-center">Servicios</h2>
-  <div class="grid grid-cols-3">
+  <div class="cards">
     <div
       class="w-64 h-80 bg-white0 hover:scale-105 transition-transform duration-300 shadow-lg rounded-lg m-4 relative"
     >
@@ -59,3 +59,11 @@
     </div>
   </div>
 </section>
+
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 32px;
+  }
+</style>
