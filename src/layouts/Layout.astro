@@ -19,5 +19,10 @@ import Footer from "../components/Footer.astro";
       <slot />
     </main>
     <Footer />
+
+    <script>
+      import { helix } from "ldrs";
+      helix.register();
+    </script>
   </body>
 </html>
