@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "ldrs/ring";
 ---
 
 <!doctype html>
@@ -14,14 +15,11 @@ import Footer from "../components/Footer.astro";
     <title>Empresa-X</title>
   </head>
   <body class="bg-white text-black max-w-full">
+    <l-ring size="60" color="green"></l-ring>
     <Header />
     <main>
       <slot />
     </main>
     <Footer />
-
-    <script>
-      import "ldrs/helix";
-    </script>
   </body>
 </html>
