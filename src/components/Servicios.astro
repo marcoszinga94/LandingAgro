@@ -1,31 +1,78 @@
-<section id="servicios" class="p-8 m-auto max-w-5xl">
-  <h2 class="text-3xl font-bold mb-6 text-center">Servicios</h2>
-  <div class="cards">
-    <div
-      class="w-64 h-80 bg-white0 hover:scale-105 transition-transform duration-300 shadow-lg rounded-lg m-4 relative"
+<section id="servicios" class="bg-green-100">
+  <div class="p-8 m-auto max-w-5xl">
+    <h2 class="text-3xl font-bold mb-6 text-center">Servicios</h2>
+    <p class="text-center text-xl">
+      En Empresa-X, nos comprometemos a brindar servicios de excelencia a
+      nuestros clientes. Ofrecemos una amplia gama de servicios, desde la
+      producción y distribución de productos agrícolas hasta la educación y
+      capacitación sobre agricultura sostenible.
+    </p>
+    <button
+      class="flex justify-center bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 mx-auto my-12 border rounded-full"
     >
-      <div class="p-4">
-        <h2 class="text-black text-lg text-center font-semibold mb-2">
-          Servicio 1
-        </h2>
-        <p class="text-gray-800 text-sm text-center">
-          Descripción del Servicio 1.
-        </p>
-        <img src="/Images/agricultura.png" alt="imagen del servicio" />
-      </div>
+      <span class="animate-pulse">Contactanos</span>
+    </button>
+
+    <!-- CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
       <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
+        class="w-full h-48 bg-white0 hover:scale-105 transition-transform duration-300 shadow-lg rounded-lg m-4 relative bg-white"
       >
-        <p>Detalles adicionales del Servicio 1.</p>
+        <h2 class="text-black text-lg text-center font-semibold mb-2">
+          Cultivo
+        </h2>
+        <img
+          class="w-full h-auto border-md object-fill rounded-sm"
+          src="https://ecotrendies.com/wp-content/uploads/2018/10/tecnicas-cultivos-ecologicos-660x400.jpg"
+          alt="imagen del servicio"
+        />
+
+        <div
+          class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
+        >
+          <p>Detalles adicionales del Servicio 1.</p>
+        </div>
+      </div>
+
+      <div
+        class="w-full h-48 bg-white0 hover:scale-105 transition-transform duration-300 shadow-lg rounded-lg m-4 relative bg-white"
+      >
+        <div class="p-4">
+          <h2 class="text-black text-lg text-center font-semibold mb-2">
+            Cosecha
+          </h2>
+          <img
+            class="w-full h-auto border-md object-fill rounded-sm"
+            src="https://www.rocalba.es/blog/wp-content/uploads/cultivos-cosecha-rapida-950x500.jpg"
+            alt="imagen del servicio"
+          />
+        </div>
+        <div
+          class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
+        >
+          <p>Detalles adicionales del Servicio 1.</p>
+        </div>
+      </div>
+
+      <div
+        class="w-full h-48 bg-white0 hover:scale-105 transition-transform duration-300 shadow-lg rounded-lg m-4 relative bg-white"
+      >
+        <div class="p-4">
+          <h2 class="text-black text-lg text-center font-semibold mb-2">
+            Distribucion
+          </h2>
+          <img
+            class="w-full h-auto border-md object-fill rounded-sm"
+            src=" https://directivosygerentes.es/wp-content/uploads/2020/04/los-lideres-de-la-industria-alimentaria-alertan-sobre-el-peligro-existente-en-la-distribucion-de-los-alimentos-681x492.jpg"
+            alt="imagen del servicio"
+          />
+        </div>
+        <div
+          class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
+        >
+          <p>Detalles adicionales del Servicio 1.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 32px;
-  }
-</style>
