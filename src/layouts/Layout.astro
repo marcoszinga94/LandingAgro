@@ -13,6 +13,7 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Empresa-X</title>
   </head>
+
   <body class="bg-white text-black max-w-full">
     <main>
       <slot />
@@ -22,21 +23,23 @@ import Footer from "../components/Footer.astro";
 
 <style>
   @font-face {
-    font-family: "Wremena";
+    font-family: "Wremena", sans-serif;
     src: url("public/Fonts/Wremena.otf");
   }
+
   @font-face {
-    font-family: "Mori";
-    src: url("publi/Fonts/Mori.otf");
+    font-family: "Mori", sans-serif;
+    src: url("public/Fonts/Mori.otf");
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: Wremena;
+    font-family: "Wremena";
   }
+
   p {
-    font-family: Mori;
+    font-family: "Mori";
   }
 </style>
