@@ -14,7 +14,7 @@ import Footer from "../components/Footer.astro";
     <title>Empresa-X</title>
   </head>
 
-  <body class="bg-[#edeadd] text-black max-w-full">
+  <body class="bg-[#edeadd] text-black font">
     <main>
       <slot />
     </main>
@@ -32,14 +32,7 @@ import Footer from "../components/Footer.astro";
     src: url("public/Fonts/Mori.otf");
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Wremena";
-  }
-
-  p {
+  * {
     font-family: "Mori";
   }
 </style>
