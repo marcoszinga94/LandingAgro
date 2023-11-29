@@ -1,23 +1,23 @@
 // script.ts
 document.addEventListener("DOMContentLoaded", function () {
-  const apiKey: string = "AgQKRAWPFGfbAOTt7OhoYIWHON5qAbxt";
+  const apiKey: string = "7bb40db53e202dc7da26d5404411e9c4";
   let locationKey: string | null = null;
 
   const weatherContainer: HTMLElement | null =
     document.getElementById("weather-container");
 
-  // Interface para definir la estructura de los datos meteorológicos
   interface WeatherData {
-    LocalizedName: string;
-    Temperature: {
-      Metric: {
-        Value: number;
-      };
+    name: string;
+    main: {
+      temp: number;
     };
-    WeatherText: string;
+    weather: [
+      {
+        description: string;
+      }
+    ];
   }
 
-  // Función para obtener la ubicación del usuario mediante geoposicionamiento
   const getUserLocation = (): void => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
           const { latitude, longitude } = position.coords;
           locationKey = await getLocationKeyByCoordinates(latitude, longitude);
 
-          // Llama a la función para obtener datos meteorológicos
           if (locationKey) {
             getWeatherData();
           } else {
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Función para obtener datos meteorológicos
   const getWeatherData = async (): Promise<void> => {
     try {
       if (!locationKey) {
@@ -50,52 +48,39 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const response = await fetch(
-        `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}&language=es-AR`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${locationKey}&lon=${locationKey}&appid=${apiKey}&units=metric`
       );
-      const data: WeatherData[] = await response.json();
-      displayWeather(data[0]);
+      const data: WeatherData = await response.json();
+      displayWeather(data);
     } catch (error) {
       console.error("Error al obtener datos meteorológicos", error);
     }
   };
 
-  // Función para obtener el código de ubicación de AccuWeather a partir de coordenadas
   const getLocationKeyByCoordinates = async (
     latitude: number,
     longitude: number
   ): Promise<string | null> => {
     try {
-      const locationResponse = await fetch(
-        `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${apiKey}&q=${latitude},${longitude}`
-      );
-      const locationData = await locationResponse.json();
-
-      if (locationData.Key) {
-        return locationData.Key;
-      } else {
-        console.error(
-          "No se encontró el código de ubicación para las coordenadas proporcionadas."
-        );
-        return null;
-      }
+      return `${latitude},${longitude}`;
     } catch (error) {
-      console.error("Error al obtener el código de ubicación", error);
+      console.error("Error al obtener las coordenadas", error);
       return null;
     }
   };
 
-  // Función para mostrar los datos meteorológicos en la página
   const displayWeather = (weatherData: WeatherData): void => {
     if (weatherContainer) {
       const weatherHtml: string = `
-        <h3 class="text-xl">Ubicacion: ${weatherData.LocalizedName}</h3>
-        <p class="text-lg">Temperatura: ${weatherData.Temperature.Metric.Value}°C</p>
-        <p class="text-sm">Tiempo: ${weatherData.WeatherText}</p>
+        <div>
+          <h3 class="text-xl">${weatherData.name}</h3>
+          <p class="text-lg">${weatherData.main.temp}°C</p>
+          <p class="text-sm">${weatherData.weather[0].description}</p>
+        </div>
       `;
       weatherContainer.innerHTML = weatherHtml;
     }
   };
 
-  // Llama a la función al cargar la página
   getUserLocation();
 });
