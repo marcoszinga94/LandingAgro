@@ -1,45 +1,67 @@
-<section id="contacto" class="flex justify-center m-auto p-auto h-[50vh]">
-  <aside class="flex-1">
-    <h2 class="text-3xl font-bold text-center mb-6">Contacto</h2>
-    <div class="flex flex-row">
-      <div class="w-1/2 m-auto p-4 bg-green-400 text-right">
-        <h3 class="text-xl font-bold text-center mb-6">Datos de contacto</h3>
-        <p class="mb-2">Cale Imaginacion 123, Ciudad Verdadera, Argentina</p>
-        <p class="mb-2">elsocorro@gmail.com</p>
-        <p>+54 9 3757 53 3256</p>
+<section
+  id="contacto"
+  class="flex flex-col justify-center m-auto p-auto h-auto md:h-[50vh]"
+>
+  <h2 class="text-3xl font-bold text-center my-6">Contacto</h2>
+  <div class="flex flex-row m-0 p-0">
+    <aside class="flex-1 mt-8 mx-auto md:m-auto h-auto w-full">
+      <div class="flex flex-row">
+        <div class="w-full m-auto p-8 bg-[#425630] text-white text-right">
+          <h3 class="text-xl font-bold text-center mb-6">Datos de contacto</h3>
+          <p class="mb-2">Cale Imaginacion 123, Ciudad Verdadera, Argentina</p>
+          <p class="mb-2">elsocorro@gmail.com</p>
+          <p class="mb-2">+54 9 3757 53 3256</p>
+        </div>
       </div>
-    </div>
-  </aside>
-  <aside class="flex-1">
-    <div class="w-1/2 m-auto p-4 bg-white">
-      <h3 class="text-xl font-bold text-center mb-6">Formulario de contacto</h3>
-      <form class="">
-        <div class="grid grid-cols-3 gap-4 mb-4">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre"
-            class="border"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            class="border"
-          />
-          <input
-            type="text"
-            name="asunto"
-            placeholder="Asunto"
-            class="border"
-          />
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-          <textarea name="mensaje" placeholder="Mensaje" class="border"
-          ></textarea>
-          <button type="submit" class="border bg-green-400">Enviar</button>
-        </div>
-      </form>
-    </div>
-  </aside>
+    </aside>
+    <aside class="flex-1 mt-8 mx-auto md:m-auto">
+      <div class="w-full m-auto p-8 bg-white">
+        <h3 class="text-xl font-bold text-center mb-6">
+          Formulario de contacto
+        </h3>
+        <form class="">
+          <div class="grid grid-cols-3 gap-4 mb-4">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre"
+              class="border"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              class="border"
+            />
+            <input
+              type="text"
+              name="telefono"
+              placeholder="Teléfono"
+              class="border"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <textarea name="mensaje" placeholder="Mensaje" class="border"
+            ></textarea>
+            <button type="submit" class="border bg-[#425630] text-white"
+              >Enviar</button
+            >
+          </div>
+        </form>
+      </div>
+    </aside>
+  </div>
+  <div
+    id="ww_58b5af795cfca"
+    v="1.3"
+    loc="auto"
+    a='{"t":"ticker","lang":"es","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"rgba(66,86,48,1)","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"rgba(129,212,250,1)","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'
+  >
+    Más previsiones: <a
+      href="https://oneweather.org/es/madrid/25_days/"
+      id="ww_58b5af795cfca_u"
+      target="_blank">Tiempo Madrid 25 días</a>
+  </div><script
+    async
+    src="https://app2.weatherwidget.org/js/?id=ww_58b5af795cfca"></script>
 </section>
