@@ -14,22 +14,27 @@ export async function Weather(elementId: string): Promise<void> {
     // Obtén el elemento HTML donde deseas mostrar los datos
     const dataContainer = document.getElementById(elementId);
 
-    // Verifica si el elemento existe antes de acceder a sus propiedades
+    // Muestra los datos en el elemento HTML si existe
     if (dataContainer) {
-      // Muestra los datos en el elemento HTML
       dataContainer.innerHTML = `<p>País: ${data.location.country}</p>
                                  <p>Ciudad: ${data.location.name}</p>
                                  <p>Región: ${data.location.region}</p>`;
-    } else {
-      console.error(`Elemento con ID '${elementId}' no encontrado.`);
     }
   } catch (error) {
     console.error("Error al obtener datos:", error);
 
-    // En caso de error, muestra un mensaje de error en el elemento HTML
-    const dataContainer = document.getElementById(elementId);
-    if (dataContainer) {
-      dataContainer.innerHTML = "Error al obtener datos.";
-    }
+    // Lanza el error nuevamente para que pueda ser manejado por otras partes del código
+    throw error;
   }
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    await Weather("dataContainer");
+  } catch (error) {
+    console.error("Error al obtener datos:", error);
+
+    // Lanza el error nuevamente para que pueda ser manejado por otras partes del código
+    throw error;
+  }
+});
