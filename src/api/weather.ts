@@ -1,40 +1,18 @@
-export async function Weather(elementId: string): Promise<void> {
-  const options: RequestInit = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "7db644329fmsh52b412170f59829p169394jsn670535384297",
-      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-    },
-  };
+export async function Weather(elementId: string): Promise<void> {}
 
-  try {
-    const response = await fetch("https://weatherapi-com.p.rapidapi.com/ip.json?q=200.115.56.63", options);
-    const data = await response.json();
+const response = await fetch(
+  "http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=AgQKRAWPFGfbAOTt7OhoYIWHON5qAbxt&q=-33%2C353593%2C%20-63%2C717729&language=es-AR"
+);
 
-    // Obtén el elemento HTML donde deseas mostrar los datos
-    const dataContainer = document.getElementById(elementId);
+if (response.ok) {
+  const data = await response.json();
+  const dataContainer: HTMLElement | null = document.getElementById(elementId);
 
-    // Muestra los datos en el elemento HTML si existe
-    if (dataContainer) {
-      dataContainer.innerHTML = `<p>País: ${data.location.country}</p>
-                                 <p>Ciudad: ${data.location.name}</p>
-                                 <p>Región: ${data.location.region}</p>`;
-    }
-  } catch (error) {
-    console.error("Error al obtener datos:", error);
-
-    // Lanza el error nuevamente para que pueda ser manejado por otras partes del código
-    throw error;
+  if (dataContainer) {
+    dataContainer.innerHTML = `<p>País: ${data.location.country}</p>
+                               <p>Región: ${data.location.region}</p>
+                               <p>Ciudad: ${data.location.name}</p>`;
+  } else {
+    console.error("No encontrado el HTMLElement");
   }
 }
-
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    await Weather("dataContainer");
-  } catch (error) {
-    console.error("Error al obtener datos:", error);
-
-    // Lanza el error nuevamente para que pueda ser manejado por otras partes del código
-    throw error;
-  }
-});
