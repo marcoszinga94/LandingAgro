@@ -1,6 +1,18 @@
+---
+export async function Weather() {
+  const document = fetch(
+    "http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=AgQKRAWPFGfbAOTt7OhoYIWHON5qAbxt&q=-33%2C353593%2C%20-63%2C717729&language=es-AR"
+  )
+    .then((res) => res.json())
+    .then((response) => (document.getElementById("weatherContainer").innerHTML = JSON.stringify(response.json())));
+}
+---
+
 <header class="bg-white text-black py-0 fixed h-auto w-screen z-30">
   <div class="container mx-auto flex justify-between items-center m-auto p-auto">
     <img src="/Images/logo.svg" title="logo el socorro" alt="logo el socorro" width="500px" height="200px" class="h-full w-[200px]" />
+
+    <div id="weatherContainer"></div>
 
     <nav class="bg-white border-gray-200">
       <ul class="flex flex-row p-auto m-auto justify-between">
