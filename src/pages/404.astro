@@ -6,22 +6,22 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="El Socorro">
   <Header />
-  <div
-    class="w-full h-[92vh] justify-center text-center z-50 bg-black text-white"
-  >
+  <div id="contenedor" class="w-full h-[92vh] justify-center text-center z-50 text-[#243015]">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
       <h1>
-        <span class="text-[10rem]">404</span><span class="text-[3rem]">
-          pagina no encontrada</span
-        >
+        <span class="text-[#edeadd] text-[10rem]">404</span><span class="text-[#edeadd] text-[3rem]"> pagina no encontrada</span>
       </h1>
 
-      <a href="/"
-        ><button class="bg-green-400 m-auto p-4 rounded-md border"
-          >VOLVER</button
-        ></a
-      >
+      <a href="/"><button class="bg-green-400 m-auto p-4 rounded-md border">VOLVER</button></a>
     </div>
   </div>
   <Footer />
 </Layout>
+
+<style>
+  #contenedor {
+    background-image: url("./Images/404.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
