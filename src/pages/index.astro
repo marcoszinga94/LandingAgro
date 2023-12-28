@@ -13,19 +13,19 @@ import SectionContainer from "../components/SectionContainer.astro";
 <Layout title="El Socorro">
   <Header />
   <main>
-    <SectionContainer class="h-auto lg:h-screen w-screen">
+    <SectionContainer>
       <Encabezado />
     </SectionContainer>
-    <SectionContainer class="h-auto lg:h-screen w-screen" id="Nosotros">
+    <SectionContainer class="bg-[#edeadd] flex-col lg:flex-row" id="Nosotros">
       <Nosotros />
     </SectionContainer>
-    <SectionContainer class="h-auto lg:h-screen w-screen" id="Servicios">
+    <SectionContainer id="Servicios" class="flex-col lg:flex-row">
       <Servicios />
     </SectionContainer>
-    <SectionContainer class="h-auto lg:h-screen w-screen" id="Produccion">
+    <SectionContainer id="Produccion" class="bg-[#243015] text-white flex flex-col h-auto w-screen m-auto py-8">
       <Produccion />
     </SectionContainer>
-    <SectionContainer class="h-auto lg:h-screen w-screen" id="Contacto">
+    <SectionContainer id="Contacto" class="flex-col lg:flex-row">
       <Contacto />
     </SectionContainer>
   </main>

@@ -1,5 +1,5 @@
 ---
-const { titulo, descripcionMapeada, imagen } = Astro.props;
+const { titulo, descripcion, imagen } = Astro.props;
 ---
 
 <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
@@ -10,8 +10,6 @@ const { titulo, descripcionMapeada, imagen } = Astro.props;
   <div
     class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
   >
-    <ol>
-      <ol>{descripcionMapeada}</ol>
-    </ol>
+    <ol>{descripcion}</ol>
   </div>
 </div>
