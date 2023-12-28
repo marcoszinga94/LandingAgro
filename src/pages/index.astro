@@ -2,21 +2,32 @@
 import Layout from "../layouts/Layout.astro";
 import Encabezado from "../components/Encabezado.astro";
 import Nosotros from "../components/Nosotros.astro";
-import Servicios from "../components/Servicios.astro";
+import Servicios from "../components/Servicios&Equipos.astro";
 import Contacto from "../components/Contacto.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Produccion from "../components/Produccion.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <Layout title="El Socorro">
   <Header />
   <main>
-    <Encabezado />
-    <Nosotros />
-    <Servicios />
-    <Produccion />
-    <Contacto />
+    <SectionContainer class="h-auto lg:h-screen w-screen lg:w-auto">
+      <Encabezado />
+    </SectionContainer>
+    <SectionContainer class="h-auto lg:h-screen w-screen lg:w-auto" id="Nosotros">
+      <Nosotros />
+    </SectionContainer>
+    <SectionContainer class="h-auto lg:h-screen w-screen lg:w-auto flex-col lg:flex-row" id="Servicios">
+      <Servicios />
+    </SectionContainer>
+    <SectionContainer class="h-auto lg:h-screen w-screen lg:w-auto" id="Produccion">
+      <Produccion />
+    </SectionContainer>
+    <SectionContainer class="h-auto lg:h-screen w-screen lg:w-auto" id="Contacto">
+      <Contacto />
+    </SectionContainer>
   </main>
   <Footer />
 </Layout>
