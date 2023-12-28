@@ -4,62 +4,50 @@ const CARDSEQUIPOS = [
   {
     titulo: "Siembra",
     imagen: "./Images/siembra.webp",
+    uno: "1 John Deere 8400",
+    dos: "2 John Deere 8320",
+    tres: "3 John Deere 7R",
+    cuatro: "Crucianelli Plantor 42-38 + Presicion Planting",
+    cinco: "John Deere DB 62 Exact emergy",
+    seis: "John Deere Airl drill 80 - 19",
+    siete: "Fercam 16 – 70 Manisera",
   },
   {
     titulo: "Cosecha",
     imagen: "./Images/cosecha.webp",
+    uno: "4 unidades John Deere S670",
+    dos: "1 unidad John Deere 780",
+    tres: "4 draper John Deere 40",
+    cuatro: "1 draper John Deere 45",
   },
   {
     titulo: "Pulverización",
     imagen: "./Images/pulverizacion.webp",
+    uno: "3 Stara Imperador 4000",
   },
   {
     titulo: "Tecnología + Monitorización",
     imagen: "./Images/precision.webp",
+    uno: "Precision Planting",
+    dos: "John Deere Conecta",
   },
 ];
 
-const descripcion = [
-  {
-    1: "1 John Deere 8400",
-    2: "2 John Deere 8320",
-    3: "3 John Deere 7R",
-    4: "Crucianelli Plantor 42-38 + Presicion Planting",
-    5: "John Deere DB 62 Exact emergy",
-    6: "John Deere Airl drill 80 - 19",
-    7: "Fercam 16 – 70 Manisera",
-  },
-  {
-    1: "4 unidades John Deere S670",
-    2: "1 unidad John Deere 780",
-    3: "4 draper John Deere 40",
-    4: "1 draper John Deere 45",
-  },
-  "3 Stara Imperador 4000",
-  {
-    1: "Precision Planting",
-    2: "John Deere Conecta",
-  },
-];
-
-const equipos = CARDSEQUIPOS.map((equipo, index) => ({
-  ...equipo,
-  descripcion: descripcion[index],
-}));
+const equipos = CARDSEQUIPOS.map((equipo) => ({ ...equipo }));
 ---
 
 <div class="flex flex-col">
   <div class="flex flex-col m-auto p-auto justify-between">
     <h2 class="text-4xl font-bold pb-6 text-center">Equipos</h2>
     <p class="text-center text-2xl py-4 px-8 md:px-10">
-      En <span class="font-bold">El Socorro</span>, nos comprometemos a brindar servicios de excelencia.
+      En <span class="font-bold">El Socorro</span>, contamos con herramientas para:
     </p>
   </div>
   <ol class="grid grid-cols-2 gap-4 md:gap-8">
     {
-      equipos.map((equipo) => (
+      equipos.map((equipos) => (
         <li>
-          <CardsEquiposItems {...equipo} />
+          <CardsEquiposItems {...equipos} />
         </li>
       ))
     }
