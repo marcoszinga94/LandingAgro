@@ -1,5 +1,5 @@
 ---
-import CardsItems from "./CardsServiciosItems.astro";
+import CardsServiciosItems from "./CardsServiciosItems.astro";
 const CARDSSERVICIOS = [
   {
     titulo: "Ganadería",
@@ -36,7 +36,7 @@ const CARDSSERVICIOS = [
     {
       CARDSSERVICIOS.map((info) => (
         <li>
-          <CardsItems {...info} />
+          <CardsServiciosItems {...info} />
         </li>
       ))
     }
