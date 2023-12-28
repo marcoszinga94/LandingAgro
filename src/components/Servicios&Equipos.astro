@@ -1,128 +1,15 @@
+---
+import CardsServicios from "./CardsServicios.astro";
+import CardsEquipos from "./CardsEquipos.astro";
+---
+
 <!-- SERVICIOS -->
 <aside class="flex-1 m-0 px-10 py-32 bg-[#243015] text-[#edeadd]">
-  <div class="flex flex-col m-auto p-auto justify-between">
-    <h2 class="text-4xl font-bold pb-6 text-center">Servicios</h2>
-    <p class="text-center text-2xl py-4 px-8 md:px-10">
-      En <span class="font-bold">El Socorro</span>, nos comprometemos a brindar servicios de excelencia.
-    </p>
-  </div>
-
   <!-- CARDS -->
-  <div class="grid grid-cols-2 gap-4 md:gap-8 m-0 p-0">
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Ganadería</h2>
-      <img loading="lazy" src="./Images/ganaderia.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <p class="text-center">Feedlot con 3.000 cabezas de capacidad operativa</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Arrendamiento de campos</h2>
-      <img loading="lazy" src="./Images/arrendamiento.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <p class="text-center">Te ofrecemos un contrato de trabajo equitativo y cuidamos tu capital con nuestros recursos</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Producción asociada</h2>
-      <img loading="lazy" src="./Images/asociada.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <p class="text-center">
-          Trabajamos junto a los dueños de los campos en sociedad, brindamos equipos de trabajos propios y capacitados y la posibilidad de monitorear en tiempo
-          real la producción de tu campo
-        </p>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Equipos propios</h2>
-      <img loading="lazy" src="./Images/equipos.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <p class="text-center">
-          Contamos con todos los equipos y el personal capacitado para prestar todos los servicios sin necesidad de contratar a terceros
-        </p>
-      </div>
-    </div>
-  </div>
+  <CardsServicios />
 </aside>
 
 <!-- EQUIPOS -->
 <aside class="flex-1 m-0 px-10 py-32 bg-[#edeadd] text-[#243015]">
-  <div class="flex flex-col m-auto p-auto justify-between">
-    <h2 class="text-4xl font-bold pb-6 text-center">Equipos</h2>
-    <p class="text-center text-2xl py-4 px-8 md:px-10">
-      En <span class="font-bold">El Socorro</span>, contamos con gran variedad y calidad de Herramientas.
-    </p>
-  </div>
-
-  <!-- CARDS -->
-  <div class="grid grid-cols-2 gap-4 md:gap-8 m-0 p-0">
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Siembra</h2>
-      <img loading="lazy" src="./Images/siembra.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <ul>
-          <li>1 John Deere 8400</li>
-          <li>2 John Deere 8320</li>
-          <li>3 John Deere 7R</li>
-          <li>Crucianelli Plantor 42-38 + Presicion Planting</li>
-          <li>John Deere DB 62 Exact emergy</li>
-          <li>John Deere Airl drill 80 - 19</li>
-          <li>Fercam 16 – 70 Manisera</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Cosecha</h2>
-      <img loading="lazy" src="./Images/cosecha.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <ul>
-          <li>4 unidades John Deere S670</li>
-          <li>1 unidad John Deere 780</li>
-          <li>4 draper John Deere 40</li>
-          <li>1 draper John Deere 45</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Pulverización</h2>
-      <img loading="lazy" src="./Images/pulverizacion.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <ul>
-          <li>3 Stara Imperador 4000</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex flex-col justify-between bg-white hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-      <h2 class="text-black text-xl text-center font-semibold my-4">Tecnología + Monitoreo</h2>
-      <img loading="lazy" src="./Images/precision.webp" class="w-auto h-full max-h-[150px] border-md object-cover rounded-b-md" alt="imagen del servicio" />
-      <div
-        class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100"
-      >
-        <ul>
-          <li>Precision Planting</li>
-          <li>John Deere Conecta</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <CardsEquipos />
 </aside>

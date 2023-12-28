@@ -1,0 +1,44 @@
+---
+import CardsItems from "./CardsServiciosItems.astro";
+const CARDSSERVICIOS = [
+  {
+    titulo: "Ganadería",
+    descripcion: "Feedlot con 3.000 cabezas de capacidad operativa",
+    imagen: "./Images/ganaderia.webp",
+  },
+  {
+    titulo: "Arrendamiento de campos",
+    descripcion: "Te ofrecemos un contrato de trabajo equitativo y cuidamos tu capital con nuestros recursos",
+    imagen: "./Images/arrendamiento.webp",
+  },
+  {
+    titulo: "Produccion Asociada",
+    descripcion:
+      "Trabajamos junto a los dueños de los campos en sociedad, brindamos equipos de trabajos propios y capacitados y la posibilidad de monitorear en tiempo real la producción de tu campo",
+    imagen: "./Images/asociada.webp",
+  },
+  {
+    titulo: "Equipos Propios",
+    descripcion: "Contamos con todos los equipos y el personal capacitado para prestar todos los servicios sin necesidad de contratar a terceros",
+    imagen: "./Images/equipos.webp",
+  },
+];
+---
+
+<div class="flex flex-col">
+  <div class="flex flex-col m-auto p-auto justify-between">
+    <h2 class="text-4xl font-bold pb-6 text-center">Servicios</h2>
+    <p class="text-center text-2xl py-4 px-8 md:px-10">
+      En <span class="font-bold">El Socorro</span>, nos comprometemos a brindar servicios de excelencia.
+    </p>
+  </div>
+  <ol class="grid grid-cols-2 gap-4 md:gap-8">
+    {
+      CARDSSERVICIOS.map((info) => (
+        <li>
+          <CardsItems {...info} />
+        </li>
+      ))
+    }
+  </ol>
+</div>
