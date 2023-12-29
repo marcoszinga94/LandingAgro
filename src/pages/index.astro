@@ -6,9 +6,8 @@ import Servicios from "../components/Servicios&Equipos.astro";
 import Contacto from "../components/Contacto.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import Produccion from "../components/Produccion.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import NavegadorMovil from "../components/NavegadorMovil.astro";
+import Produccion from "../components/Produccion.astro";
 ---
 
 <Layout title="El Socorro">
@@ -17,19 +16,22 @@ import NavegadorMovil from "../components/NavegadorMovil.astro";
     <SectionContainer>
       <Encabezado />
     </SectionContainer>
-    <SectionContainer class="bg-[#edeadd] flex-col lg:flex-row" id="Nosotros">
+
+    <SectionContainer class="bg-[#edeadd] md:max-h-screen flex-col md:flex-row" id="Nosotros">
       <Nosotros />
     </SectionContainer>
-    <SectionContainer id="Servicios" class="flex-col lg:flex-row">
+
+    <SectionContainer id="Servicios" class="">
       <Servicios />
     </SectionContainer>
-    <SectionContainer id="Produccion" class="bg-[#243015] text-white flex flex-col h-auto w-screen m-auto py-8">
+
+    <SectionContainer id="Produccion" class="bg-[#243015] text-[#edeadd] flex-col">
       <Produccion />
     </SectionContainer>
-    <SectionContainer id="Contacto" class="flex-col lg:flex-row">
+
+    <SectionContainer id="Contacto" class="">
       <Contacto />
     </SectionContainer>
-    <NavegadorMovil />
 
     <Footer />
   </main>
