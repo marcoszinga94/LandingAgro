@@ -1,44 +1,63 @@
----
-const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
-const ciudad = "Córdoba";
-
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`;
-
-async function getWeatherData() {
-  try {
-    const response = await fetch(apiUrl);
-
-    if (!response.ok) {
-      throw new Error(`Error al obtener los datos: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-
-    updateHtmlElements(data.name, data.main.temp);
-  } catch (error) {
-    console.error("Error:", error.message);
-  }
-}
-
-function updateHtmlElements(ciudadName: string, temperatura: number) {
-  const ciudadElement = document.getElementById("ciudad");
-  const temperaturaElement = document.getElementById("temperatura");
-
-  if (ciudadElement) {
-    ciudadElement.innerText = `Ciudad: ${ciudadName}`;
-  }
-
-  if (temperaturaElement) {
-    const celsiustemperatura = temperatura - 273.15;
-    temperaturaElement.innerText = `Temperatura: ${celsiustemperatura.toFixed(2)} °C`;
-  }
-}
-
-getWeatherData();
----
-
 <div class="flex flex-col">
   <h2>EL TIEMPO</h2>
   <p id="ciudad"></p>
   <p id="temperatura"></p>
 </div>
+
+<script>
+  // Posicion del usuario
+  function success(pos) {
+    const crd = pos.coords;
+
+    console.log("Tu ubicación actual es:");
+    console.log(`Latitud : ${crd.latitude}`);
+    console.log(`Longitud: ${crd.longitude}`);
+
+    // Tiempo
+    const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}`;
+
+    getWeatherData(apiUrl);
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+  const options = {
+    timeout: 5000,
+    maximumAge: 0,
+  };
+  navigator.geolocation.getCurrentPosition(success, error, options);
+
+  // Tiempo
+  async function getWeatherData(apiUrl) {
+    try {
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`Error al obtener los datos: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      updateHtmlElements(data.name, data.main.temp);
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  }
+
+  function updateHtmlElements(ciudadName, temperatura) {
+    const ciudadElement = document.getElementById("ciudad");
+    const temperaturaElement = document.getElementById("temperatura");
+
+    if (ciudadElement) {
+      ciudadElement.innerText = `Ciudad: ${ciudadName}`;
+    }
+
+    if (temperaturaElement) {
+      const celsiustemperatura = temperatura - 273.15;
+      temperaturaElement.innerText = `Temperatura: ${celsiustemperatura.toFixed(0)}°C`;
+    }
+  }
+</script>

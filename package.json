@@ -13,7 +13,6 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/partytown": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
-    "@astrojs/vercel": "^6.1.2",
     "@sentry/astro": "^7.88.0",
     "@spotlightjs/astro": "^1.0.6",
     "astro": "^4.0.9",
