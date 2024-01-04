@@ -5,4 +5,5 @@ import partytown from "@astrojs/partytown";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), partytown()],
+  output: "hybrid",
 });
