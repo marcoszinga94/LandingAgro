@@ -1,7 +1,6 @@
 <div class="flex flex-col">
-  <h2>EL TIEMPO</h2>
+  <h2>EL TIEMPO <span id="icono"></span></h2>
   <p id="ciudad"></p>
-  <p id="temperatura"></p>
 </div>
 
 <script>
@@ -15,7 +14,7 @@
 
     // Tiempo
     const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&exclude=minutely,hourly,daily,alerts&units=metric&lang=es`;
 
     getWeatherData(apiUrl);
   }
@@ -49,15 +48,9 @@
 
   function updateHtmlElements(ciudadName, temperatura) {
     const ciudadElement = document.getElementById("ciudad");
-    const temperaturaElement = document.getElementById("temperatura");
 
     if (ciudadElement) {
-      ciudadElement.innerText = `Ciudad: ${ciudadName}`;
-    }
-
-    if (temperaturaElement) {
-      const celsiustemperatura = temperatura - 273.15;
-      temperaturaElement.innerText = `Temperatura: ${celsiustemperatura.toFixed(0)}°C`;
+      ciudadElement.innerText = `${ciudadName} ${temperatura.toFixed(0)}°C`;
     }
   }
 </script>
