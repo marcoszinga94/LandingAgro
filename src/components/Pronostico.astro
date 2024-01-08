@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-  <h2>EL TIEMPO</h2>
+  <h2 class="justify-right">EL TIEMPO</h2>
   <p id="ciudad"></p>
 </div>
 
@@ -50,7 +50,7 @@
     const ciudadElement = document.getElementById("ciudad");
 
     if (ciudadElement) {
-      ciudadElement.innerText = `${ciudadName} / ${temperatura.toFixed(0)}°C`;
+      ciudadElement.innerText = `${ciudadName} / ${temperatura.toFixed(1)}°C`;
     }
   }
 </script>

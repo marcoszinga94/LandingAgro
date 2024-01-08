@@ -1,7 +1,11 @@
-<div id="Dolar"></div>
+<div class="flex flex-row justify-center gap-12 text-green-950 border-y-2 border-green-700 mt-2">
+  <div class="flex font-medium text-center" id="DolarOficial"></div>
+  <div class="flex font-medium text-center" id="DolarBlue"></div>
+  <div class="flex font-medium text-center" id="DolarBolsa"></div>
+</div>
 
 <script>
-  const apiUrl = "https://dolarapi.com/v1/dolares/oficial";
+  const apiUrl = "https://dolarapi.com/v1/dolares";
 
   async function getDolarPrice(apiUrl) {
     try {
@@ -14,21 +18,72 @@
       const data = await response.json();
       console.log(data);
 
-      // Asegúrate de ajustar las siguientes líneas según la estructura real de la respuesta de la API
-      const dolarOficial = data.dolarOficial; // Reemplaza 'dolarOficial' con la propiedad correcta
-      const dolarBlue = data.dolarBlue; // Reemplaza 'dolarBlue' con la propiedad correcta
+      //OFICIAL
+      const precioCompraOficial = data[0].compra;
+      const precioVentaOficial = data[0].venta;
+      const nombreOficial = data[0].nombre;
+      const monedaOficial = data[0].moneda;
 
-      updateHtmlElements(dolarOficial, dolarBlue);
+      //BLUE
+      const precioCompraBlue = data[1].compra;
+      const precioVentaBlue = data[1].venta;
+      const nombreBlue = data[1].nombre;
+      const monedaBlue = data[1].moneda;
+
+      //BOLSA
+      const precioCompraBolsa = data[2].compra;
+      const precioVentaBolsa = data[2].venta;
+      const nombreBolsa = data[2].nombre;
+      const monedaBolsa = data[2].moneda;
+
+      updateHtmlElements(
+        precioCompraOficial,
+        precioVentaOficial,
+        nombreOficial,
+        monedaOficial,
+        monedaBlue,
+        nombreBlue,
+        precioCompraBlue,
+        precioVentaBlue,
+        monedaBolsa,
+        nombreBolsa,
+        precioCompraBolsa,
+        precioVentaBolsa
+      );
     } catch (error) {
       console.error("Error:", error.message);
     }
   }
 
-  function updateHtmlElements(dolarOficial, dolarBlue) {
-    const dolarElement = document.getElementById("Dolar");
+  function updateHtmlElements(
+    precioCompraOficial,
+    precioVentaOficial,
+    nombreOficial,
+    monedaOficial,
+    monedaBlue,
+    nombreBlue,
+    precioCompraBlue,
+    precioVentaBlue,
+    monedaBolsa,
+    nombreBolsa,
+    precioCompraBolsa,
+    precioVentaBolsa
+  ) {
+    const dolarOficialElement = document.getElementById("DolarOficial");
 
-    if (dolarElement) {
-      dolarElement.innerText = `${dolarOficial} / ${dolarBlue}`;
+    if (dolarOficialElement) {
+      dolarOficialElement.innerText = `${monedaOficial} ${nombreOficial}: $${precioCompraOficial} / ${precioVentaOficial}`;
+    }
+
+    const dolarBlueElement = document.getElementById("DolarBlue");
+
+    if (dolarBlueElement) {
+      dolarBlueElement.innerText = `${monedaBlue} ${nombreBlue}: $${precioCompraBlue} / ${precioVentaBlue}`;
+    }
+    const dolarBolsaElement = document.getElementById("DolarBolsa");
+
+    if (dolarBolsaElement) {
+      dolarBolsaElement.innerText = `${monedaBolsa} ${nombreBolsa}: $${precioCompraBolsa} / ${precioVentaBolsa}`;
     }
   }
 
