@@ -1,0 +1,36 @@
+<div id="Dolar"></div>
+
+<script>
+  const apiUrl = "https://dolarapi.com/v1/dolares/oficial";
+
+  async function getDolarPrice(apiUrl) {
+    try {
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`Error al obtener los datos: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log(data);
+
+      // Asegúrate de ajustar las siguientes líneas según la estructura real de la respuesta de la API
+      const dolarOficial = data.dolarOficial; // Reemplaza 'dolarOficial' con la propiedad correcta
+      const dolarBlue = data.dolarBlue; // Reemplaza 'dolarBlue' con la propiedad correcta
+
+      updateHtmlElements(dolarOficial, dolarBlue);
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  }
+
+  function updateHtmlElements(dolarOficial, dolarBlue) {
+    const dolarElement = document.getElementById("Dolar");
+
+    if (dolarElement) {
+      dolarElement.innerText = `${dolarOficial} / ${dolarBlue}`;
+    }
+  }
+
+  getDolarPrice(apiUrl);
+</script>
