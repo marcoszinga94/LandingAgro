@@ -1,6 +1,5 @@
-<div class="flex flex-col text-end h-auto w-[200px]">
-  <h2>EL TIEMPO</h2>
-  <p id="ciudad"></p>
+<div class="flex flex-row justify-center content-center h-auto w-screen text-green-950 text-lg">
+  <p>El tiempo en <span id="ciudad">Mi Ciudad</span> es de <span id="temperatura">00.0</span></p>
 </div>
 
 <script>
@@ -48,9 +47,13 @@
 
   function updateHtmlElements(ciudadName, temperatura) {
     const ciudadElement = document.getElementById("ciudad");
+    const tempElement = document.getElementById("temperatura");
 
     if (ciudadElement) {
-      ciudadElement.innerText = `${ciudadName} / ${temperatura.toFixed(1)}°C`;
+      ciudadElement.innerText = `${ciudadName}`;
+    }
+    if (tempElement) {
+      tempElement.innerText = `${temperatura.toFixed(1)}°C`;
     }
   }
 </script>

@@ -9,7 +9,8 @@ import Header from "../components/Header.astro";
 import Produccion from "../components/Produccion.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import NavegadorMovil from "../components/NavegadorMovil.astro";
-import InstagramBanner from "../components/InstagramBanner.astro";
+import CotizacionDolar from "../components/CotizacionDolar.astro";
+import Pronostico from "../components/Pronostico.astro";
 ---
 
 <Layout title="El Socorro SRL">
@@ -34,6 +35,11 @@ import InstagramBanner from "../components/InstagramBanner.astro";
 
     <SectionContainer id="Contacto" class="flex-col md:flex-row justify-center m-auto p-auto h-auto md:h-[50vh] bg-white">
       <Contacto />
+    </SectionContainer>
+
+    <SectionContainer class="border-y-2 border-green-700">
+      <Pronostico />
+      <CotizacionDolar />
     </SectionContainer>
 
     <Footer />
