@@ -1,5 +1,5 @@
 <div class="flex flex-row justify-center content-center h-auto w-screen text-green-950 text-lg">
-  <p>El tiempo en <span id="ciudad">Mi Ciudad</span> es de <span id="temperatura">00.0</span></p>
+  <p>El tiempo en <span id="ciudad">Mi Ciudad</span> es de <span id="temperatura">00.0</span>°C</p>
 </div>
 
 <script>
@@ -53,7 +53,7 @@
       ciudadElement.innerText = `${ciudadName}`;
     }
     if (tempElement) {
-      tempElement.innerText = `${temperatura.toFixed(1)}°C`;
+      tempElement.innerText = `${temperatura.toFixed(1)}`;
     }
   }
 </script>
