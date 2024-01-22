@@ -43,13 +43,7 @@ const equipos = CARDSEQUIPOS.map((equipo) => ({ ...equipo }));
       En <span class="font-bold">El Socorro</span>, contamos con la mejor tecnología en maquinarias para:
     </p>
   </div>
-  <ol class="grid grid-cols-2 gap-4 md:gap-8">
-    {
-      equipos.map((equipos) => (
-        <li>
-          <CardsEquiposItems {...equipos} />
-        </li>
-      ))
-    }
-  </ol>
+  <div class="grid grid-cols-2 gap-4 md:gap-8">
+    {equipos.map((equipos) => <CardsEquiposItems {...equipos} />)}
+  </div>
 </div>
