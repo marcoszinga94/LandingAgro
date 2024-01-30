@@ -73,7 +73,7 @@
     width: 100vw;
     z-index: 50;
     padding: 12px 40px;
-    transition: all 0.5ms;
+    transition: all 0.5s;
   }
 
   .header-bg {
@@ -87,14 +87,14 @@
     width: 100vw;
     z-index: 50;
     padding: 12px 40px;
-    transition: all 0.5ms;
+    transition: all 0.5s;
   }
 </style>
 
 <script>
   window.addEventListener("scroll", () => {
     const header = document.getElementById("myHeader") as HTMLElement;
-    if (window.scrollY > 25) {
+    if (window.scrollY > 500) {
       header.classList.add("header-bg");
     } else {
       header.classList.remove("header-bg");
