@@ -7,18 +7,21 @@
     <nav class="bg-inherit hidden lg:flex">
       <ul class="hidden lg:flex flex-row p-auto m-auto justify-between gap-6">
         <li>
-          <a href="#top" title="Inicio"><p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Inicio</p></a>
+          <a href="#top" title="Inicio" class="link"><p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Inicio</p></a
+          >
         </li>
         <li>
-          <a href="#Nosotros" title="Nosotros"><p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Nosotros</p></a>
+          <a href="#Nosotros" title="Nosotros" class="link"
+            ><p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Nosotros</p></a
+          >
         </li>
         <li>
-          <a href="#Servicios" title="Servicios">
+          <a href="#Servicios" title="Servicios" class="link">
             <p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Servicios</p>
           </a>
         </li>
         <li>
-          <a href="#Contacto" title="Contacto">
+          <a href="#Contacto" title="Contacto" class="link">
             <p class="hidden lg:flex hover:scale-110 duration-300 px-2 py-1 font-semibold text-[#425630]">Contacto</p>
           </a>
         </li>
@@ -88,6 +91,32 @@
     z-index: 50;
     padding: 12px 40px;
     transition: all 0.5s;
+  }
+
+  .link {
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+
+  .link:before {
+    background-color: #425630;
+    bottom: 5px;
+    content: "";
+    height: 2px;
+    left: 0;
+    margin: 0 auto;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transform: translateX(-50px);
+    transition: all 0.25s ease;
+    width: 75%;
+  }
+
+  .link:hover:before {
+    opacity: 1;
+    transform: translateX(0);
   }
 </style>
 
