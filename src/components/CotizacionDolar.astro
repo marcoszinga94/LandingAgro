@@ -7,7 +7,7 @@
 <script>
   const apiUrl = "https://dolarapi.com/v1/dolares";
 
-  async function getDolarPrice(apiUrl) {
+  async function getDolarPrice(apiUrl: string) {
     try {
       const response = await fetch(apiUrl);
 

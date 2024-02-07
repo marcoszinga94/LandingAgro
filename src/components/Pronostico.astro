@@ -24,7 +24,7 @@
   navigator.geolocation.getCurrentPosition(success, error, options);
 
   // Tiempo en ubicacion
-  async function getWeatherData(apiUrl) {
+  async function getWeatherData(apiUrl: string) {
     try {
       const response = await fetch(apiUrl);
 
@@ -41,7 +41,7 @@
     }
   }
 
-  function updateHtmlElements(ciudadName, temperatura) {
+  function updateHtmlElements(ciudadName: string, temperatura: any) {
     const ciudadElement = document.getElementById("ciudad");
     const tempElement = document.getElementById("temperatura");
 
