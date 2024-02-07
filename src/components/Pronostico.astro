@@ -4,7 +4,7 @@
 
 <script>
   // Posicion del usuario
-  function success(pos) {
+  function success(pos: any) {
     const crd = pos.coords;
 
     const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
@@ -13,7 +13,7 @@
     getWeatherData(apiUrl);
   }
 
-  function error(err) {
+  function error(err: any) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
   }
 
