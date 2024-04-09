@@ -1,0 +1,63 @@
+<div class="video-container flex flex-col">
+  <video class="object-cover object-center aspect-video h-72" src="/Videos/institucional.mp4" muted autoplay></video>
+</div>
+
+<div class="popup-video fixed h-full w-full z-20 top-0 left-0 hidden bg-black/90">
+  <span class="absolute top-4 right-4 text-4xl text-white font-bold z-30 cursor-pointer">&times;</span>
+  <video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" src="/Videos/institucional.mp4" muted autoplay preload="none"></video>
+</div>
+
+<script>
+  let backgroundVideo: HTMLVideoElement | null = null;
+
+  // Función para desmutear el audio del video emergente
+  function unmuteVideo() {
+    const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+    popupVideoSrc.muted = false;
+  }
+
+  // Función para mutear el audio del video emergente
+  function muteVideo() {
+    const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+    popupVideoSrc.muted = true;
+  }
+
+  // Función para cerrar el video emergente
+  function closePopupVideo() {
+    const popupVideo = document.querySelector(".popup-video") as HTMLElement;
+    popupVideo.style.display = "none";
+    muteVideo(); // Mutea el audio al cerrar el video emergente
+
+    // Reproducir el video de fondo nuevamente si existe
+    if (backgroundVideo) {
+      backgroundVideo.play();
+    }
+  }
+
+  document.querySelectorAll(".video-container").forEach((miVideo) => {
+    const videoContainer = miVideo as HTMLElement;
+    const video = videoContainer.querySelector("video") as HTMLVideoElement;
+
+    videoContainer.onclick = () => {
+      const popupVideo = document.querySelector(".popup-video") as HTMLElement;
+      const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+      popupVideo.style.display = "block";
+      popupVideoSrc.src = video.getAttribute("src") || "";
+      unmuteVideo(); // Desmutear el audio al abrir el video emergente
+
+      // Pausar el video de fondo y guardar una referencia a él
+      backgroundVideo = video;
+      video.pause();
+    };
+  });
+
+  const closePopup = document.querySelector(".popup-video span") as HTMLElement;
+  closePopup.onclick = closePopupVideo;
+
+  // Cerrar el video emergente al presionar la tecla Escape
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closePopupVideo();
+    }
+  });
+</script>
