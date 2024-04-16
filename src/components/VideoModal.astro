@@ -27,7 +27,8 @@
   function closePopupVideo() {
     const popupVideo = document.querySelector(".popup-video") as HTMLElement;
     popupVideo.style.display = "none";
-    muteVideo(); // Mutea el audio al cerrar el video emergente
+    // Mutea el audio al cerrar el video emergente
+    muteVideo();
 
     // Reproducir el video de fondo nuevamente si existe
     if (backgroundVideo) {
@@ -44,7 +45,8 @@
       const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
       popupVideo.style.display = "block";
       popupVideoSrc.src = video.getAttribute("src") || "";
-      unmuteVideo(); // Desmutear el audio al abrir el video emergente
+      // Desmutear el audio al abrir el video emergente
+      unmuteVideo();
 
       // Pausar el video de fondo y guardar una referencia a él
       backgroundVideo = video;
