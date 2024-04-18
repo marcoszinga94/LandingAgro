@@ -3,13 +3,15 @@ import CardsServicios from "./CardsServicios.astro";
 import CardsEquipos from "./CardsEquipos.astro";
 ---
 
-<!-- SERVICIOS -->
-<aside class="flex-1 p-8 m-0 bg-[#243015] text-[#edeadd]">
-  <!-- CARDS -->
-  <CardsServicios />
-</aside>
+<div class="flex flex-row h-auto w-screen bg-[#243015]">
+  <!-- SERVICIOS -->
+  <aside class="flex-1 p-8 m-0 bg-[#243015] text-[#edeadd]">
+    <!-- CARDS -->
+    <CardsServicios />
+  </aside>
 
-<!-- EQUIPOS -->
-<aside class="flex-1 p-8 m-0 bg-[#edeadd] text-[#243015">
-  <CardsEquipos />
-</aside>
+  <!-- EQUIPOS -->
+  <aside class="flex-1 p-8 m-0 bg-[#edeadd] text-[#243015] rounded-bl-lg">
+    <CardsEquipos />
+  </aside>
+</div>
