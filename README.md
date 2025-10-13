@@ -1,11 +1,11 @@
-# Landing Page Empresarial con Astro 4 y Tailwind CSS
+# Web Empresarial con Astro y Tailwind CSS
 
-Esta web empresarial está construida con la potente combinación de Astro 4 y Tailwind CSS, ofreciendo un enfoque eficiente y estilizado para la presentación de servicios comerciales. Desarrollada para destacar y transmitir información de manera efectiva, esta página proporciona una experiencia fluida para los usuarios.
+Esta web empresarial está construida con la potente combinación de Astro y Tailwind CSS, ofreciendo un enfoque eficiente y estilizado para la presentación de servicios comerciales. Desarrollada para destacar y transmitir información de manera efectiva, esta página proporciona una experiencia fluida para los usuarios.
 
 ## Características Técnicas Destacadas:
 
-1. **Astro 4:**
-    - Utiliza Astro 4 como generador de sitios estáticos, ofreciendo una carga rápida y una experiencia de usuario mejorada.
+1. **Astro:**
+    - Utiliza Astro como generador de sitios estáticos, ofreciendo una carga rápida y una experiencia de usuario mejorada.
     - Aprovecha las capacidades de compilación y optimización de Astro para un rendimiento optimizado.
 
 2. **Tailwind CSS:**
