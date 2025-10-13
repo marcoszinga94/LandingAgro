@@ -1,11 +1,11 @@
-# Landing Page Empresarial con Astro 3 y Tailwind CSS
+# Web Empresarial con Astro y Tailwind CSS
 
-Esta landing page empresarial está construida con la potente combinación de Astro 3 y Tailwind CSS, ofreciendo un enfoque eficiente y estilizado para la presentación de servicios comerciales. Desarrollada para destacar y transmitir información de manera efectiva, esta página proporciona una experiencia fluida para los usuarios.
+Esta web empresarial está construida con la potente combinación de Astro y Tailwind CSS, ofreciendo un enfoque eficiente y estilizado para la presentación de servicios comerciales. Desarrollada para destacar y transmitir información de manera efectiva, esta página proporciona una experiencia fluida para los usuarios.
 
 ## Características Técnicas Destacadas:
 
-1. **Astro 3:**
-    - Utiliza Astro 3 como generador de sitios estáticos, ofreciendo una carga rápida y una experiencia de usuario mejorada.
+1. **Astro:**
+    - Utiliza Astro como generador de sitios estáticos, ofreciendo una carga rápida y una experiencia de usuario mejorada.
     - Aprovecha las capacidades de compilación y optimización de Astro para un rendimiento optimizado.
 
 2. **Tailwind CSS:**
@@ -28,14 +28,10 @@ Esta landing page empresarial está construida con la potente combinación de As
 
 ## ¿Por qué Elegirnos?
 
-Presenta de manera clara y concisa las fortalezas y diferenciadores clave de la empresa. Invita a los usuarios a explorar más allá de la landing page para obtener información detallada.
+Presenta de manera clara y concisa las fortalezas y diferenciadores clave de la empresa. 
 
 ## Instrucciones de Implementación:
 
-Clona este repositorio y sigue las instrucciones detalladas en el archivo README.md para implementar la landing page en tu propio entorno.
-
-## ¡Contribuciones Bienvenidas!
-
-Este proyecto está abierto a contribuciones. Si tienes ideas para mejoras, nuevas características o correcciones, ¡envía tu pull request!
-
-Descubre la eficiencia técnica y el estilo moderno de nuestra landing page empresarial. Construida con tecnologías líderes para ofrecer una experiencia excepcional a los usuarios.
+Clona este repositorio y ejecuta estos comandos:
+npm install
+astro dev
