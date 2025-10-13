@@ -1,11 +1,27 @@
-<div class="video-container object-cover object-center w-1/2 md:w-full md:h-1/2">
-  <video class="object-cover object-center w-full h-full cursor-pointer" src="/Videos/institucional.mp4" muted autoplay></video>
+<div
+  class="video-container object-cover object-center w-1/2 md:w-full md:h-1/2"
+>
+  <video
+    class="object-cover object-center w-full h-full cursor-pointer"
+    src="/Videos/institucional.mp4"
+    muted
+    autoplay></video>
 </div>
 
-<div class="popup-video fixed h-full w-full z-20 top-0 left-0 hidden bg-black/90">
-  <span class="absolute top-4 right-4 text-4xl text-white font-bold z-30 cursor-pointer">&times;</span>
-  <video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" src="/Videos/institucional.mp4" controls muted autoplay preload="auto"
-  ></video>
+<div
+  class="popup-video fixed h-full w-full z-20 top-0 left-0 hidden bg-black/90"
+>
+  <span
+    class="absolute top-4 right-4 text-4xl text-white font-bold z-30 cursor-pointer"
+    >&times;</span
+  >
+  <video
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover"
+    src="/Videos/institucional.mp4"
+    controls
+    muted
+    autoplay
+    preload="auto"></video>
 </div>
 
 <script>
@@ -13,13 +29,17 @@
 
   // Función para desmutear el audio del video emergente
   function unmuteVideo() {
-    const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+    const popupVideoSrc = document.querySelector(
+      ".popup-video video"
+    ) as HTMLVideoElement;
     popupVideoSrc.muted = false;
   }
 
   // Función para mutear el audio del video emergente
   function muteVideo() {
-    const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+    const popupVideoSrc = document.querySelector(
+      ".popup-video video"
+    ) as HTMLVideoElement;
     popupVideoSrc.muted = true;
   }
 
@@ -42,7 +62,9 @@
 
     videoContainer.onclick = () => {
       const popupVideo = document.querySelector(".popup-video") as HTMLElement;
-      const popupVideoSrc = document.querySelector(".popup-video video") as HTMLVideoElement;
+      const popupVideoSrc = document.querySelector(
+        ".popup-video video"
+      ) as HTMLVideoElement;
       popupVideo.style.display = "block";
       popupVideoSrc.src = video.getAttribute("src") || "";
       // Desmutear el audio al abrir el video emergente

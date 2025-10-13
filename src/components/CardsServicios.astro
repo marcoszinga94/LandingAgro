@@ -7,7 +7,8 @@ const CARDSSERVICIOS = [
   },
   {
     titulo: "Arrendamiento de campos",
-    descripcion: "Te ofrecemos un contrato de trabajo equitativo y cuidamos tu capital con nuestros recursos",
+    descripcion:
+      "Te ofrecemos un contrato de trabajo equitativo y cuidamos tu capital con nuestros recursos",
     imagen: "./Images/arrendamiento.webp",
   },
   {
@@ -18,7 +19,8 @@ const CARDSSERVICIOS = [
   },
   {
     titulo: "Equipos Propios",
-    descripcion: "Contamos con todos los equipos y el personal capacitado para prestar todos los servicios sin necesidad de contratar a terceros",
+    descripcion:
+      "Contamos con todos los equipos y el personal capacitado para prestar todos los servicios sin necesidad de contratar a terceros",
     imagen: "./Images/equipos.webp",
   },
 ];
@@ -26,9 +28,12 @@ const CARDSSERVICIOS = [
 
 <div class="flex flex-col">
   <div class="flex flex-col m-auto p-auto justify-between">
-    <h2 class="text-4xl font-bold mt-0 md:m-auto px-auto pb-8 text-center">Servicios</h2>
+    <h2 class="text-4xl font-bold mt-0 md:m-auto px-auto pb-8 text-center">
+      Servicios
+    </h2>
     <p class="text-center text-2xl pb-4 px-8 md:px-10">
-      En <span class="font-bold">El Socorro</span>, nos comprometemos a brindar servicios de excelencia.
+      En <span class="font-bold">El Socorro</span>, nos comprometemos a brindar
+      servicios de excelencia.
     </p>
   </div>
   <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
@@ -36,8 +41,15 @@ const CARDSSERVICIOS = [
       CARDSSERVICIOS.map((servicios) => (
         <li>
           <div class="flex flex-col justify-between bg-[#edeadd] hover:scale-105 duration-300 shadow-lg rounded-lg m-0 p-0">
-            <h2 class="text-[#243015] text-sm md:text-xl text-center font-semibold my-4">{servicios.titulo}</h2>
-            <img loading="lazy" src={servicios.imagen} class="h-56 w-auto border-md object-cover rounded-b-md" alt="imagen del servicio" />
+            <h2 class="text-[#243015] text-sm md:text-xl text-center font-semibold my-4">
+              {servicios.titulo}
+            </h2>
+            <img
+              loading="lazy"
+              src={servicios.imagen}
+              class="h-56 w-auto border-md object-cover rounded-b-md"
+              alt="imagen del servicio"
+            />
 
             <div class="rounded-md absolute inset-0 bg-black bg-opacity-70 text-white flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
               <p class="text-center text-pretty">{servicios.descripcion}</p>
