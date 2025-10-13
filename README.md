@@ -32,10 +32,6 @@ Presenta de manera clara y concisa las fortalezas y diferenciadores clave de la 
 
 ## Instrucciones de Implementación:
 
-Clona este repositorio y sigue las instrucciones detalladas en el archivo README.md para implementar la landing page en tu propio entorno.
-
-## ¡Contribuciones Bienvenidas!
-
-Este proyecto está abierto a contribuciones. Si tienes ideas para mejoras, nuevas características o correcciones, ¡envía tu pull request!
-
-Descubre la eficiencia técnica y el estilo moderno de nuestra landing page empresarial. Construida con tecnologías líderes para ofrecer una experiencia excepcional a los usuarios.
+Clona este repositorio, ejecuta
+npm install
+astro dev
