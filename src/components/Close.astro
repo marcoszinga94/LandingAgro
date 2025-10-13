@@ -1,0 +1,22 @@
+<button {...Astro.props} class="group relative">
+  <div
+    class="relative flex overflow-hidden items-center justify-center size-12 transform transition-all duration-200"
+  >
+    <div
+      class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+    >
+      <div
+        class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-0 group-focus:translate-x-0 flex w-12 group-focus:w-12"
+      >
+        <div
+          class="absolute bg-black h-[2px] w-5 transform transition-all duration-500 rotate-45 delay-300 group-focus:rotate-45"
+        >
+        </div>
+        <div
+          class="absolute bg-black h-[2px] w-5 transform transition-all duration-500 -rotate-45 delay-300 group-focus:-rotate-45"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</button>

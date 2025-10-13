@@ -1,7 +1,10 @@
+---
+import Menu from "./Menu.astro";
+import NavegadorMovil from "./NavegadorMovil.astro";
+---
+
 <header id="myHeader">
-  <div
-    class="flex mx-auto justify-center lg:justify-between items-center px-10"
-  >
+  <div class="flex mx-auto justify-between items-center px-10">
     <a href="/">
       <img
         src="/Icons/logo.webp "
@@ -11,6 +14,10 @@
         height="100"
       />
     </a>
+
+    <div class="lg:hidden">
+      <Menu id="menu-button" />
+    </div>
 
     <nav class="bg-inherit hidden lg:flex">
       <ul class="hidden lg:flex flex-row p-auto m-auto justify-between gap-6">
@@ -71,6 +78,8 @@
   </div>
 </header>
 
+<NavegadorMovil />
+
 <style>
   header {
     background-color: rgba(237, 235, 222, 0.6);
@@ -123,6 +132,17 @@
       header.classList.add("header-bg");
     } else {
       header.classList.remove("header-bg");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.getElementById("menu-button");
+    const menuMovil = document.getElementById("menu-movil");
+
+    if (menuButton && menuMovil) {
+      menuButton.addEventListener("click", () => {
+        menuMovil.classList.remove("[transform:translateY(-200%)]");
+      });
     }
   });
 </script>
