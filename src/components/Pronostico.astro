@@ -1,5 +1,5 @@
 <div
-  class="flex flex-row justify-center content-center h-auto w-screen text-green-950 text-lg"
+  class="flex flex-row justify-center content-center h-auto w-full text-green-950 text-lg"
 >
   <p class="text-sm md:text-base">
     El tiempo en <span id="ciudad">Mi Ciudad</span> es de <span id="temperatura"
@@ -9,18 +9,20 @@
 </div>
 
 <script>
+  const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
+  const apiUrl = (lat: number, lon: number) =>
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=es`;
+
   // Posicion del usuario
   function success(pos: any) {
     const crd = pos.coords;
-
-    const apiKey = "b41230023d7d2118a4de7dfd86a9e3ca";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&exclude=minutely,hourly,daily,alerts&units=metric&lang=es`;
-
-    getWeatherData(apiUrl);
+    getWeatherData(apiUrl(crd.latitude, crd.longitude));
   }
 
   function error(err: any) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
+    // Ubicación por defecto: Alejandro Roca, Córdoba
+    getWeatherData(apiUrl(-33.3543, -63.7277));
   }
 
   const options = {
@@ -39,7 +41,6 @@
       }
 
       const data = await response.json();
-      console.log(data);
 
       updateHtmlElements(data.name, data.main.temp);
     } catch (error) {

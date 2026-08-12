@@ -1,5 +1,5 @@
 <div
-  class="flex flex-row justify-center content-center h-auto w-screen text-green-950 gap-8"
+  class="flex flex-row justify-center content-center h-auto w-full text-green-950 gap-8"
 >
   <p
     class="flex font-medium text-center content-center text-sm md:text-base"
@@ -30,7 +30,6 @@
       }
 
       const data = await response.json();
-      console.log(data);
 
       //OFICIAL
       const precioCompraOficial = data[0].compra;
